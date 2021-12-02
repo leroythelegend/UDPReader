@@ -18,7 +18,7 @@ public class UDPReader {
     /// - throws: An error of type `UDPReaderError`
     ///
     
-    init(listen port: String) throws {
+    public init(listen port: String) throws {
         self.connectionHandle = INVALID_HANDLE
         
         var hints = createAddrInfoStruct()
@@ -46,7 +46,7 @@ public class UDPReader {
     ///   - Data: read
     ///
     
-    func read(amount : Int) -> (Data?) {
+    public func read(amount : Int) -> (Data?) {
         let buffer : UnsafeMutableRawPointer = UnsafeMutableRawPointer.allocate(byteCount: amount, alignment: 1)
         defer {
             buffer.deallocate()
