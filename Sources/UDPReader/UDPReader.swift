@@ -1,7 +1,12 @@
 
 import Foundation
 
-public class UDPReader {
+///
+/// UDPReader is a simple class for listening and reading
+/// UDP packets
+///
+
+public class UDPReader: Reader {
     
     enum UDPReaderError: Error {
         case getAddrInfo(error: Int32)
@@ -30,7 +35,7 @@ public class UDPReader {
     }
     
     ///
-    /// ReaderUDP deinit: close connection
+    /// UDPReader deinit: close connection
     ///
     
     deinit {
@@ -42,8 +47,7 @@ public class UDPReader {
     ///
     /// - parameters:
     ///   - amount: amount of bytes to be read
-    /// - returns:
-    ///   - Data: read
+    /// - returns: Data read else nil if no data has been read
     ///
     
     public func read(amount : Int) -> (Data?) {
