@@ -15,7 +15,7 @@ import Foundation
 /// application instead of the real UDPReader.
 ///
 
-protocol Reader {
+public protocol Reader {
     func read(amount : Int) -> (Data?)
 }
 
